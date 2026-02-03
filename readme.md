@@ -13,11 +13,11 @@ Kejiang Qian, Amos Storkey, Fengxiang He. Rationality Measurement and Theory for
 
 Our theory leads to the following hypotheses.
 
-### H1: Benefits of regularisations: layer normalisation (LN), $\ell_2$ regularisation (L2), and weight normalisation (WN), can penalise hypothesis complexity.
+- H1: Benefits of regularisations: layer normalisation (LN), $\ell_2$ regularisation (L2), and weight normalisation (WN), can penalise hypothesis complexity.
 
-### H2: Benefits of domain randomisation: improves robustness of reinforcement learning algorithms against distribution shifts across environments.
+- H2: Benefits of domain randomisation: improves robustness of reinforcement learning algorithms against distribution shifts across environments.
 
-### H3: Deficits of environment shifts: larger environment shifts lead to worse rationality. 
+- H3: Deficits of environment shifts: larger environment shifts lead to worse rationality. 
 
 ---
 

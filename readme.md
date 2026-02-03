@@ -89,3 +89,15 @@ Results will be saved to:
 ```
 logs/{env}/{experiment}/
 ```
+
+## Citation
+
+If you use this code in your research, please cite:
+
+```
+@article{,
+  title={Rationality Gap in Reinforcement Learning},
+  author={...},
+  year={2025}
+}
+```

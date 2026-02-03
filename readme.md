@@ -2,8 +2,22 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository implements experiments for analysing the **rationality gap** of reinforcement learning agents under training–inference distribution shift.  
-We focus on DQN-based learners in tabular-style environments (Taxi-v3 and CliffWalking) and study how regularisation and domain randomisation affect rational behaviour.
+This repository contains empirical verification of our rationality measures and theoretical analysis. More details are in the following paper:
+
+Kejiang Qian, Amos Storkey, Fengxiang He. Rationality Measurement and Theory for Reinforcement Learning Agents.
+
+- arXiv:
+- School of Informatics, University of Edinburgh
+
+## Empirically Testable Hypotheses
+
+Our theory leads to the following hypotheses.
+
+### H1: Benefits of regularisations: layer normalisation (LN), $\ell_2$ regularisation (L2), and weight normalisation (WN), can penalise hypothesis complexity.
+
+### H2: Benefits of domain randomisation: improves robustness of reinforcement learning algorithms against distribution shifts across environments.
+
+### H3: Deficits of environment shifts: larger environment shifts lead to worse rationality. 
 
 ---
 

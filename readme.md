@@ -1,4 +1,6 @@
-# Rationality Gap in Reinforcement Learning
+# Rationality Measurement and Theory for Reinforcement Learning Agents
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This repository implements experiments for analysing the **rationality gap** of reinforcement learning agents under training–inference distribution shift.  
 We focus on DQN-based learners in tabular-style environments (Taxi-v3 and CliffWalking) and study how regularisation and domain randomisation affect rational behaviour.
@@ -20,9 +22,9 @@ Rationality/
 │   └── runners.py          # Training / evaluation pipeline
 │
 ├── experiment/             # Reproduction scripts
-│   ├── exp1_*_env_level.sh
+│   ├── exp1_*_reg.sh
 │   ├── exp2_*_domain_rand.sh
-│   └── exp3_*_reg.sh
+│   └── exp3_*_env_level.sh
 │
 └── train.py                # Main entry
 ```
@@ -63,11 +65,11 @@ python train.py \
 
 ## Experiments Reproduction
 
-### Exp1 – Environment Level Shift
+### Exp1 – Regularisation
 
 ```bash
-bash experiment/exp1_taxi_env_level.sh
-bash experiment/exp1_cliff_env_level.sh
+bash experiment/exp1_taxi_reg.sh
+bash experiment/exp1_cliff_reg.sh
 ```
 
 ### Exp2 – Domain Randomisation
@@ -77,11 +79,11 @@ bash experiment/exp2_taxi_domain_rand.sh
 bash experiment/exp2_cliff_domain_rand.sh
 ```
 
-### Exp3 – Regularisation Study
+### Exp3 – Environment Level
 
 ```bash
-bash experiment/exp3_taxi_reg.sh
-bash experiment/exp3_cliff_reg.sh
+bash experiment/exp3_taxi_env_level.sh
+bash experiment/exp3_cliff_env_level.sh
 ```
 
 Results will be saved to:

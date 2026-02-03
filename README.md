@@ -6,7 +6,7 @@ This repository contains empirical verification of our rationality measures and 
 
 Kejiang Qian, Amos Storkey, Fengxiang He. Rationality Measurement and Theory for Reinforcement Learning Agents.
 
-- arXiv:
+- arXiv: [link coming soon]
 - School of Informatics, University of Edinburgh
 
 ## Empirically Testable Hypotheses
@@ -111,9 +111,9 @@ logs/{env}/{experiment}/
 If you use this code in your research, please cite:
 
 ```
-@article{,
-  title={Rationality Gap in Reinforcement Learning},
-  author={...},
+@article{qian2025rationality,
+  title={Rationality Measurement and Theory for Reinforcement Learning Agents},
+  author={Qian, Kejiang and Storkey, Amos and He, Fengxiang},
   year={2025}
 }
-```
+

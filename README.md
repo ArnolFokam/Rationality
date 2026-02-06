@@ -4,10 +4,7 @@
 
 This repository contains empirical verification of our rationality measures and theoretical analysis. More details are in the following paper:
 
-Kejiang Qian, Amos Storkey, Fengxiang He. Rationality Measurement and Theory for Reinforcement Learning Agents.
-
-- arXiv: [link coming soon]
-- School of Informatics, University of Edinburgh
+Kejiang Qian, Amos Storkey, Fengxiang He. Rationality Measurement and Theory for Reinforcement Learning Agents. [arXiv](https://arxiv.org/pdf/2602.04737)
 
 ## Empirically Testable Hypotheses
 

@@ -48,7 +48,7 @@ def run_dqn(
     weightnorm=False,
     l2_coef=0.0,
     logger=None,
-    gap_method="optimal policy",
+    gap_method="evaluated policy",
 ):
     set_global_seed(seed)
 

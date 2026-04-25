@@ -77,7 +77,7 @@ def main():
         "--expected_rational_gap",
         type=str,
         choices=["evaluated policy", "optimal policy"],
-        default="optimal policy",
+        default="evaluated policy",
         help="state distribution to use for the expected rational gap: 'optimal policy' (d_h^{pi_circ}) or 'evaluated policy' (d_h^{pi})",
     )
 

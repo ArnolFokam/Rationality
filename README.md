@@ -32,13 +32,13 @@ Rationality/
 │   ├── regularisers.py     # Regularisation modules
 │   └── runners.py          # Training / evaluation pipeline
 │
-├── experiment_1/           # Rational risk gap experiments (state dist d_h^{pi})
+├── experiment_1/           # Rational risk gap experiments (state distribution induced by policy pi)
 │   ├── exp1_*_reg.sh
 │   ├── exp2_*_domain_rand.sh
 │   ├── exp3_*_env_level.sh
 │   └── exp4_*_reg_intensity.sh
 │
-├── experiment_2/           # Special case: state dist D_h^{*,†} induced by pi^*
+├── experiment_2/           # Special case: state distribution induced by optimal policy pi^*
 │   ├── exp1_*_reg.sh
 │   ├── exp2_*_domain_rand.sh
 │   ├── exp3_*_env_level.sh
@@ -86,17 +86,17 @@ All results are available at [Google Drive](https://drive.google.com/drive/folde
 
 The reproduction scripts are organised into two groups corresponding to two definitions of the **expected rational risk gap**:
 
-- **`experiment_1/`** — Standard rational risk gap experiments. The expected rational risk uses the state distribution $d_h^{\pi}$ induced by the **evaluated policy** $\pi$ in deployment.
-- **`experiment_2/`** — Special case where the expected rational risk uses the state distribution $\mathcal{D}_h^{*,\dagger}$ induced by the **optimal policy** $\pi^*$ over a trajectory of horizon $H$ in deployment.
+- **`experiment_1/`** Standard rational risk gap experiments. The expected rational risk uses the state distribution $D_h^{\pi,\dagger}$ induced by the **evaluated policy** $\hat{\pi}$ in deployment.
+- **`experiment_2/`** Special case where the expected rational risk uses the state distribution $\mathcal{D}_h^{*,\dagger}$ induced by the **optimal policy** $\pi^*$ in deployment.
 
 The choice is controlled by the `--expected_rational_gap` flag (`"evaluated policy"` or `"optimal policy"`).
 
 ### Exp1 – Regularisation
 
 ```bash
-bash experiment_1/exp1_taxi_reg.sh        # d_h^{pi}
+bash experiment_1/exp1_taxi_reg.sh        # D_h^{pi,\dagger}
 bash experiment_1/exp1_cliff_reg.sh
-bash experiment_2/exp1_taxi_reg.sh        # D_h^{*,dagger}
+bash experiment_2/exp1_taxi_reg.sh        # D_h^{*,\dagger}
 bash experiment_2/exp1_cliff_reg.sh
 ```
 

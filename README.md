@@ -32,10 +32,17 @@ Rationality/
 │   ├── regularisers.py     # Regularisation modules
 │   └── runners.py          # Training / evaluation pipeline
 │
-├── experiment/             # Reproduction scripts
+├── experiment_1/           # Rational risk gap experiments (state dist d_h^{pi})
 │   ├── exp1_*_reg.sh
 │   ├── exp2_*_domain_rand.sh
-│   └── exp3_*_env_level.sh
+│   ├── exp3_*_env_level.sh
+│   └── exp4_*_reg_intensity.sh
+│
+├── experiment_2/           # Special case: state dist D_h^{*,†} induced by pi^*
+│   ├── exp1_*_reg.sh
+│   ├── exp2_*_domain_rand.sh
+│   ├── exp3_*_env_level.sh
+│   └── exp4_*_reg_intensity.sh
 │
 └── train.py                # Main entry
 ```
@@ -76,25 +83,48 @@ python train.py \
 
 ## Experiments Reproduction
 All results are available at [Google Drive](https://drive.google.com/drive/folders/1gcsWy8hSoQdPl1BA4DvekTO_fitSxcp3?usp=sharing).
+
+The reproduction scripts are organised into two groups corresponding to two definitions of the **expected rational risk gap**:
+
+- **`experiment_1/`** — Standard rational risk gap experiments. The expected rational risk uses the state distribution $d_h^{\pi}$ induced by the **evaluated policy** $\pi$ in deployment.
+- **`experiment_2/`** — Special case where the expected rational risk uses the state distribution $\mathcal{D}_h^{*,\dagger}$ induced by the **optimal policy** $\pi^*$ over a trajectory of horizon $H$ in deployment.
+
+The choice is controlled by the `--expected_rational_gap` flag (`"evaluated policy"` or `"optimal policy"`).
+
 ### Exp1 – Regularisation
 
 ```bash
-bash experiment/exp1_taxi_reg.sh
-bash experiment/exp1_cliff_reg.sh
+bash experiment_1/exp1_taxi_reg.sh        # d_h^{pi}
+bash experiment_1/exp1_cliff_reg.sh
+bash experiment_2/exp1_taxi_reg.sh        # D_h^{*,dagger}
+bash experiment_2/exp1_cliff_reg.sh
 ```
 
 ### Exp2 – Domain Randomisation
 
 ```bash
-bash experiment/exp2_taxi_domain_rand.sh
-bash experiment/exp2_cliff_domain_rand.sh
+bash experiment_1/exp2_taxi_domain_rand.sh
+bash experiment_1/exp2_cliff_domain_rand.sh
+bash experiment_2/exp2_taxi_domain_rand.sh
+bash experiment_2/exp2_cliff_domain_rand.sh
 ```
 
 ### Exp3 – Environment Level
 
 ```bash
-bash experiment/exp3_taxi_env_level.sh
-bash experiment/exp3_cliff_env_level.sh
+bash experiment_1/exp3_taxi_env_level.sh
+bash experiment_1/exp3_cliff_env_level.sh
+bash experiment_2/exp3_taxi_env_level.sh
+bash experiment_2/exp3_cliff_env_level.sh
+```
+
+### Exp4 – Regularisation Intensity
+
+```bash
+bash experiment_1/exp4_taxi_reg_intensity.sh
+bash experiment_1/exp4_cliff_reg_intensity.sh
+bash experiment_2/exp4_taxi_reg_intensity.sh
+bash experiment_2/exp4_cliff_reg_intensity.sh
 ```
 
 Results will be saved to:

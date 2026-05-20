@@ -45,7 +45,7 @@ def main():
     parser.add_argument("--tau_star", type=float, default=1e-6)
 
     parser.add_argument("--algo", type=str, choices=["dqn", "ppo"], default="dqn")
-    parser.add_argument("--device", type=str, default="cuda")
+    parser.add_argument("--device", type=str, default="auto")
 
     parser.add_argument("--num_episodes", type=int, default=5000)
     parser.add_argument("--eval_every", type=int, default=20)

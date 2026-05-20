@@ -23,10 +23,21 @@ def set_global_seed(seed: int):
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
 
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
+
+def resolve_device(device: str) -> str:
+    device = device.lower()
+    if device == "auto":
+        if torch.backends.mps.is_available():
+            return "mps"
+        if torch.cuda.is_available():
+            return "cuda"
+        return "cpu"
+    return device
 
 
 def run_dqn(
@@ -41,7 +52,7 @@ def run_dqn(
     eps_start=1.0,
     eps_end=0.05,
     eps_decay_episodes=3000,
-    device="cuda",
+    device="auto",
     seed=0,
     dqn_tau=1e-7,
     layernorm=False,
@@ -52,7 +63,7 @@ def run_dqn(
 ):
     set_global_seed(seed)
 
-    device = device.lower()
+    device = resolve_device(device)
     nS, nA, H = exp.nS, exp.nA, exp.H
     env = exp.env_train
 
